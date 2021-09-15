@@ -1,0 +1,124 @@
+@import "./variables";
+@import "./media-queries";
+
+.back{
+    background-image: url("../img/foreign-exchange-hero.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.hero {
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    
+    &-container{
+        @include flexCenter();
+        flex-direction: column;
+        height: 100%;
+        
+        &-title{
+            height: 20%;
+            width: 93%;
+
+            h1{
+                text-transform: uppercase;
+                font-size: 80px;
+                color: #e68c30;
+                margin-top: 40px;
+                margin-bottom: 20px;
+                @include flexCenter();
+                text-align: center;
+            }
+
+            h3{
+                text-transform: uppercase;
+                font-size: 50px;
+                color: #fff;
+                margin-bottom: 60px;
+                @include flexCenter();
+            }
+
+            #icon{
+                height: 50px;
+                width: auto;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+        &-img{
+            height: 100px;
+            width: auto;
+        }
+
+        &-animation{
+            display: grid;
+            grid-template-columns: repeat(3, 150px);
+            grid-template-rows: repeat(3, 150px);
+            position: relative;
+            text-align: center;
+            height: 70%;
+            margin: auto;
+            padding-top: 150px;
+
+            #euro{
+                @include w800px{
+                    display: none;
+                }
+            }
+
+            #dollar{
+                @include w800px{
+                    display: none;
+                }
+            }
+
+            #pound{
+                @include w800px{
+                    display: none;
+                }
+            }
+
+            #yen{
+                @include w800px{
+                    display: none;
+                }
+            }
+        }
+
+        footer{
+            background-color: #e68c30;
+            height: 10%;
+            width: 100%;
+            @include flexCenter();
+
+            h3{
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+
+
+
+#converter{
+    animation: rotating 2s linear infinite;
+}
+
+#euro{
+    animation: translate-eu 10s linear infinite;
+}
+
+#yen{
+    animation: translate-yen 10s linear infinite;
+}
+
+#pound{
+    animation: translate-pound 10s linear infinite;
+}
+
+#dollar{
+    animation: translate-dollar 10s linear infinite;
+}

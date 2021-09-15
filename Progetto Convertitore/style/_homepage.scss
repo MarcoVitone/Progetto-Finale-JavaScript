@@ -1,0 +1,277 @@
+@import "./variables";
+@import "./media-queries";
+
+.container{
+    width: 75vw;
+    height: 90%;
+    margin: auto;
+
+    @include w800px{
+        width: 90vw;
+    }
+
+    &-head{
+        height: 15%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 30px;
+
+        &-logo{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            @include w800px{
+                width: 80%;
+            }
+            
+            img{
+                height: 80px;
+                width: auto;
+            }
+
+            h1{
+                text-transform: uppercase;
+                padding-left: 20px;
+                font-size: 45px;
+            }
+        }
+
+        &-menu{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            a{
+                text-decoration: none;
+                color: black;
+                border-bottom: 3px solid black;
+                padding: 15px;
+                margin-right: 8px;
+            }
+
+            a:visited{
+                text-decoration: none;
+            }
+
+            a:hover,
+            .current{
+                background-color: black;
+                color: white;
+            }
+
+            @include w800px{
+                display: none;
+            }
+        }
+
+        &-hamburger{
+            display: none;
+            
+            @include w800px{
+                display: initial;
+            }
+            div{
+                @include hamburger();
+                background-color: black;
+            }
+        }
+    }
+
+    &-main {
+        background-color: rgba($color: #eeaa17, $alpha: 0.6);
+        border-radius: 50px;
+
+        &-title{
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            padding-top: 30px;
+            margin-bottom: 50px;
+            height: 10%;
+
+            h1{
+                text-transform: uppercase;
+                font-size: 35px;
+            }
+        }
+
+        &-converter{
+            width: 60%;
+            height: 50%;
+            @include flexCenter();
+            flex-direction: column;
+            margin: auto;
+
+            @include w800px{
+                width: 90%;
+            }
+
+            img{
+                height: 80px;
+                width: auto;
+                padding: 10px;
+                margin-left: 23px;
+                margin-right: 23px;
+            }
+
+            img:hover{
+                animation: rotating 2s linear infinite;
+            }
+
+            &-value{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                @include w800px{
+                    flex-direction: column;
+                }
+
+                &-left{
+                    display: flex;
+                    flex-direction: column;
+                    margin-right: 30px;
+                    margin-left: 30px;
+
+                    label{
+                        font-size: 20px;
+                        font-style: italic;
+                        margin-bottom: 20px;
+                    }
+
+                    #currency-left{
+                        border-radius: 5px;
+                        font-size: 20px;
+                        width: 200px;
+                        margin-bottom: 20px;
+                        box-shadow: 5px 5px 5px rgb(10, 15, 255) inset;
+                    }
+
+                    #currency-left:hover{
+                        background-color: rgb(10, 15, 255);
+                    }
+
+                    option:hover{
+                        background-color: #ffff;
+                        color: rgb(10, 15, 255);
+                    }
+
+                    #amount{
+                        border-radius: 5px;
+                        text-align: right;
+                        font-size: 20px;
+                        width: 200px;
+                        margin-bottom: 20px;
+                        box-shadow: 5px 5px 5px rgb(10, 15, 255) inset;
+                    }
+                }
+
+                &-right{
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 30px;
+                    margin-right: 30px;
+                
+                    label{
+                        font-size: 20px;
+                        font-style: italic;
+                        margin-bottom: 20px;
+                    }
+
+                    #currency-right{
+                        border-radius: 5px;
+                        font-size: 20px;
+                        width: 200px;
+                        margin-bottom: 20px;
+                        box-shadow: 5px 5px 5px rgb(10, 15, 255) inset;
+                    }
+
+                    #currency-right:hover{
+                        background-color: rgb(10, 15, 255);
+                    }
+
+                    #rates{
+                        border-radius: 5px;
+                        text-align: right;
+                        font-size: 20px;
+                        width: 200px;
+                        margin-bottom: 20px; 
+                        box-shadow: 5px 5px 5px rgb(10, 15, 255) inset;
+                    }
+                }
+            }
+
+            &-date{
+                margin: auto;
+                margin-top: 20px;
+                margin-bottom: 40px;
+
+                span{
+                    display: block;
+                }
+
+                label{
+                    margin-left: 5px;
+                }
+
+                #date{
+                    margin-left: 10px;
+                    text-align: center;
+                    border-radius: 5px;
+                    font-size: 15px;
+            }
+            }
+            
+        }
+
+        &-historycal{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: auto;
+            width: 80%;
+            height: 40%;
+            padding-bottom: 30px;
+
+            @include w800px{
+                justify-content: center;
+                flex-direction: column;
+            }
+        
+            &-graphic{
+                width: 75%;
+
+                @include w800px{
+                    width: 100%;
+                }
+            }
+
+
+            &-data{
+                h3{
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+
+                    @include w800px{
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer{
+
+    background-color: #000000;
+    width: 60%;
+    @include flexCenter();
+    margin: auto;
+
+    h3{
+        color: #fff;
+    }
+}

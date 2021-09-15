@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <title>Marco's Currency Converter</title>
+    <!--Chart.js JS CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="container-head">
+            <div class="container-head-logo">
+                <a href="./hero.html"><img src="./img/convertitori.png" alt=""></a>
+                <h1>marco's currency converter</h1>
+            </div>
+            <div class="container-head-menu">
+                <a class="current" href="./homepage.html"><h3>HOME</h3></a>
+                <a href="./about.html"><h3>ABOUT</h3></a>            
+            </div>
+            <button class="ham">
+                <span class="menuIcon material-icons">
+                    menu
+                </span>
+            </button>
+            <ul class="menu">
+                <li><a class="menuLink" href="./homepage.html">HOME</a></li>
+                <li><a class="menuLink" href="./about.html">ABOUT</a></li>
+            </ul>
+        </header>
+        
+        <!-- Main Section -->
+        <section class="container-main">
+            <!-- Main Title -->
+            <div class="container-main-title">
+                <h1>Convert Currency</h1>
+            </div>
+            <!-- Main Converter -->
+            <div class="container-main-converter">
+                <div class="container-main-converter-value">
+                    <div class="container-main-converter-value-left">
+                        <label for="currency-left">Currency input:</label>
+                        <select name="currency-left" id="currency-left">
+                            <option value="EUR">Euro <span>EUR</span></option>
+                            <option value="USD">US dollar <span>USD</span></option>
+                            <option value="GBP">Pound sterling <span>GBP</span></option>
+                            <option value="JPY">Japanese yen <span>JPY</span></option>
+                            <option value="AUD">Australian dollar <span>AUD</span></option>
+                            <option value="HKD">Hong Kong dollar <span>HKD</span></option>
+                            <option value="CAD">Canadian dollar <span>CAD</span></option>
+                            <option value="PLN">Polish zloty <span>PLN</span></option>
+                            <option value="RUB">Russian rouble <span>RUB</span></option>
+                            <option value="CNY">Chinese yuan renminbi <span>CNY</span></option>
+                            <option value="MXN">Mexican peso <span>MXN</span></option>
+                            <option value="CHF">Swiss franc <span>CHF</span></option>
+                        </select>
+                        <input type="number" id="amount">
+                    </div>
+                    <img src="./img/convertitori.png" id="button" alt="">
+                    <div class="container-main-converter-value-right">
+                        <label for="currency-left">Currency output:</label>
+                        <select name="currency-right" id="currency-right">
+                            <option value="USD">US dollar <span>USD</span></option>
+                            <option value="GBP">Pound sterling <span>GBP</span></option>
+                            <option value="EUR">Euro <span>EUR</span></option>
+                            <option value="JPY">Japanese yen <span>JPY</span></option>
+                            <option value="AUD">Australian dollar <span>AUD</span></option>
+                            <option value="HKD">Hong Kong dollar <span>HKD</span></option>
+                            <option value="CAD">Canadian dollar <span>CAD</span></option>
+                            <option value="PLN">Polish zloty <span>PLN</span></option>
+                            <option value="RUB">Russian rouble <span>RUB</span></option>
+                            <option value="CNY">Chinese yuan renminbi <span>CNY</span></option>
+                            <option value="MXN">Mexican peso <span>MXN</span></option>
+                            <option value="CHF">Swiss franc <span>CHF</span></option>
+                        </select>
+                        <input type="number" id="rates" readonly="readonly">
+                    </div>
+                </div>
+                <div class="container-main-converter-date">
+                    <span>Set the date for historycal data</span>
+                    <label for="date">DATE: </label>
+                    <input type="date" name="date" id="date">
+                </div>
+                
+            </div>
+            <!-- Main Historycal -->
+            <div class="container-main-historycal">
+                <div class="container-main-historycal-graphic" id="graphic">
+                    <h3 id="graphic-title"></h3>
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div class="container-main-historycal-data">
+                    <h3 id="min"></h3>
+                    <h3 id="max"></h3>
+                    <h3 id="average"></h3>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div>
+            <h3>Powered by Marco Vitone</h3>
+        </div>
+    </footer>
+
+    <script src="./javascript/hamburger.js"></script>
+    <script src="./javascript/interface.js"></script>
+    <script src="./javascript/converter.js"></script>
+    <script src="./javascript/graphic.js"></script>
+
+</body>
+</html>
